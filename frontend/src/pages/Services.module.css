@@ -1,0 +1,251 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding-top: 6rem;
+}
+
+.heroGlow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.heroGlow::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 33.333%;
+  height: 400px;
+  width: 600px;
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
+  background: hsl(225, 85%, 55%, 0.03);
+  filter: blur(120px);
+}
+
+.heroContainer {
+  position: relative;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.heroBadge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: hsl(225, 85%, 55%);
+}
+
+.heroTitle {
+  margin-top: 1rem;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: hsl(220, 25%, 10%);
+  text-wrap: balance;
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 4.5rem;
+  }
+}
+
+.heroDescription {
+  max-width: 42rem;
+  margin: 1.5rem auto 0;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: hsl(220, 15%, 55%);
+}
+
+.servicesList {
+  padding: 5rem 0;
+}
+
+.servicesContainer {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.serviceItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-bottom: 1px solid hsl(220, 25%, 10%, 0.05);
+  padding: 4rem 0;
+}
+
+.serviceItem:first-child {
+  padding-top: 0;
+}
+
+.serviceItem:last-child {
+  border-bottom: none;
+}
+
+@media (min-width: 768px) {
+  .serviceItem {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+}
+
+.serviceIcon {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.iconBox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 0.75rem;
+  background: hsl(220, 20%, 95%);
+  color: hsl(225, 85%, 55%);
+}
+
+.serviceNumber {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: hsl(220, 15%, 55%);
+}
+
+@media (min-width: 768px) {
+  .serviceNumber {
+    display: none;
+  }
+}
+
+.serviceContent {
+  flex: 1;
+}
+
+.serviceNumberDesktop {
+  display: none;
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: hsl(220, 15%, 55%);
+}
+
+@media (min-width: 768px) {
+  .serviceNumberDesktop {
+    display: block;
+  }
+}
+
+.serviceTitle {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(220, 25%, 10%);
+}
+
+@media (min-width: 768px) {
+  .serviceTitle {
+    font-size: 1.875rem;
+  }
+}
+
+.serviceDescription {
+  max-width: 36rem;
+  margin-top: 1rem;
+  line-height: 1.75;
+  color: hsl(220, 15%, 55%);
+}
+
+.serviceTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.tag {
+  border-radius: 9999px;
+  border: 1px solid hsl(220, 25%, 10%, 0.08);
+  background: hsl(220, 20%, 95%);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  color: hsl(220, 15%, 55%);
+}
+
+.cta {
+  border-top: 1px solid hsl(220, 25%, 10%, 0.05);
+  padding: 8rem 0;
+}
+
+.ctaContainer {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: hsl(220, 25%, 10%);
+}
+
+@media (min-width: 768px) {
+  .ctaTitle {
+    font-size: 3rem;
+  }
+}
+
+.ctaDescription {
+  max-width: 32rem;
+  margin: 1rem auto 0;
+  line-height: 1.75;
+  color: hsl(220, 15%, 55%);
+}
+
+.ctaButton {
+  margin-top: 2rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background: hsl(220, 25%, 10%);
+  padding: 0.875rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(220, 20%, 98%);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.12);
+}
+
+.arrow {
+  transition: transform 0.3s;
+}
+
+.button:hover .arrow {
+  transform: translateX(4px);
+}

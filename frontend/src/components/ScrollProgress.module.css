@@ -1,0 +1,10 @@
+.scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  height: 2px;
+  transform-origin: left;
+  background: hsl(225, 85%, 55%);
+}

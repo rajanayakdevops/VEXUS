@@ -1,0 +1,106 @@
+.cta {
+  position: relative;
+  padding: 10rem 0;
+  background: hsl(220, 20%, 98%);
+}
+
+.glow1,
+.glow2 {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(120px);
+}
+
+.glow1 {
+  left: 33.333%;
+  top: 50%;
+  height: 400px;
+  width: 400px;
+  transform: translate(-50%, -50%);
+  background: hsl(225, 85%, 55%, 0.06);
+}
+
+.glow2 {
+  right: 33.333%;
+  top: 50%;
+  height: 300px;
+  width: 300px;
+  transform: translate(-50%, -50%);
+  background: hsl(165, 70%, 42%, 0.06);
+}
+
+.container {
+  position: relative;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.title {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: hsl(220, 25%, 10%);
+  text-wrap: balance;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 4.5rem;
+  }
+}
+
+.gradient {
+  background: linear-gradient(to right, hsl(225, 85%, 55%), hsl(250, 75%, 58%), hsl(165, 70%, 42%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  max-width: 36rem;
+  margin: 1.5rem auto 0;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: hsl(220, 15%, 55%);
+}
+
+.buttonWrapper {
+  margin-top: 2.5rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background: hsl(225, 85%, 55%);
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 10px 40px rgba(59, 91, 230, 0.2);
+  transition: all 0.3s;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 40px rgba(59, 91, 230, 0.3);
+}
+
+.arrow {
+  transition: transform 0.3s;
+}
+
+.button:hover .arrow {
+  transform: translateX(4px);
+}

@@ -1,0 +1,154 @@
+.process {
+  position: relative;
+  border-top: 1px solid hsl(165, 70%, 42%, 0.1);
+  border-bottom: 1px solid hsl(165, 70%, 42%, 0.1);
+  padding: 8rem 0;
+  background: linear-gradient(135deg, hsl(165 70% 42% / 0.04) 0%, hsl(220 20% 98%) 50%, hsl(225 85% 55% / 0.03) 100%);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.header {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 9999px;
+  border: 1px solid hsl(165, 70%, 42%, 0.2);
+  background: hsl(165, 70%, 42%, 0.08);
+  padding: 0.375rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: hsl(165, 70%, 42%);
+}
+
+.title {
+  margin-top: 1.5rem;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: hsl(220, 25%, 10%);
+  text-wrap: balance;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+.progressLine {
+  position: relative;
+  margin-bottom: 4rem;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .progressLine {
+    display: block;
+  }
+}
+
+.progressBg {
+  height: 1px;
+  width: 100%;
+  background: hsl(220, 20%, 90%);
+}
+
+.progressBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(to right, hsl(225, 85%, 55%), hsl(165, 70%, 42%), hsl(280, 65%, 58%));
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.stepItem {
+  position: relative;
+  text-align: center;
+}
+
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+  width: 3.5rem;
+  margin: 0 auto 1rem;
+  border-radius: 9999px;
+  border: 1px solid;
+}
+
+.iconWrapper.primary {
+  border-color: hsl(225, 85%, 55%, 0.3);
+  background: hsl(225, 85%, 55%, 0.08);
+  color: hsl(225, 85%, 55%);
+}
+
+.iconWrapper.accent {
+  border-color: hsl(165, 70%, 42%, 0.3);
+  background: hsl(165, 70%, 42%, 0.08);
+  color: hsl(165, 70%, 42%);
+}
+
+.iconWrapper.purple {
+  border-color: hsl(280, 65%, 58%, 0.3);
+  background: hsl(280, 65%, 58%, 0.08);
+  color: hsl(280, 65%, 58%);
+}
+
+.iconWrapper.orange {
+  border-color: hsl(35, 92%, 50%, 0.3);
+  background: hsl(35, 92%, 50%, 0.08);
+  color: hsl(35, 92%, 50%);
+}
+
+.iconWrapper.red {
+  border-color: hsl(350, 75%, 55%, 0.3);
+  background: hsl(350, 75%, 55%, 0.08);
+  color: hsl(350, 75%, 55%);
+}
+
+.stepNumber {
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: hsl(225, 85%, 55%);
+}
+
+.stepTitle {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: hsl(220, 25%, 10%);
+}
+
+.stepDescription {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.75;
+  color: hsl(220, 15%, 55%);
+}

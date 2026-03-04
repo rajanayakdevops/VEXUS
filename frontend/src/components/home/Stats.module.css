@@ -1,0 +1,65 @@
+.stats {
+  position: relative;
+  border-top: 1px solid hsl(225, 85%, 55%, 0.1);
+  border-bottom: 1px solid hsl(225, 85%, 55%, 0.1);
+  padding: 6rem 0;
+  background: linear-gradient(135deg, hsl(225 85% 55% / 0.04) 0%, hsl(165 70% 42% / 0.03) 100%);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.statItem {
+  text-align: center;
+}
+
+.counter {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 768px) {
+  .counter {
+    font-size: 3.75rem;
+  }
+}
+
+.counter.primary {
+  color: hsl(225, 85%, 55%);
+}
+
+.counter.accent {
+  color: hsl(165, 70%, 42%);
+}
+
+.counter.purple {
+  color: hsl(280, 65%, 58%);
+}
+
+.counter.orange {
+  color: hsl(35, 92%, 50%);
+}
+
+.label {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+  color: hsl(220, 15%, 55%);
+}

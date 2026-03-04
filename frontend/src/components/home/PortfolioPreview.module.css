@@ -1,0 +1,188 @@
+.portfolio {
+  position: relative;
+  padding: 8rem 0;
+  background: hsl(220, 20%, 98%);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+  }
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 9999px;
+  border: 1px solid hsl(225, 85%, 55%, 0.2);
+  background: hsl(225, 85%, 55%, 0.08);
+  padding: 0.375rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: hsl(225, 85%, 55%);
+}
+
+.title {
+  margin-top: 1.5rem;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: hsl(220, 25%, 10%);
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+.viewAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 2px solid hsl(225, 85%, 55%, 0.2);
+  padding: 0.625rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(220, 25%, 10%);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.viewAll:hover {
+  border-color: hsl(225, 85%, 55%, 0.4);
+  background: hsl(225, 85%, 55%, 0.05);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid hsl(220, 20%, 90%);
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.accentBar {
+  height: 4px;
+}
+
+.accentBar.primary {
+  background: hsl(225, 85%, 55%);
+}
+
+.accentBar.accent {
+  background: hsl(165, 70%, 42%);
+}
+
+.accentBar.purple {
+  background: hsl(280, 65%, 58%);
+}
+
+.accentBar.orange {
+  background: hsl(35, 92%, 50%);
+}
+
+.imageWrapper {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: hsl(220, 20%, 95%);
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.5s;
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: hsl(220, 15%, 55%);
+}
+
+.projectTitle {
+  margin-top: 0.5rem;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: hsl(220, 25%, 10%);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.tag {
+  border-radius: 9999px;
+  border: 1px solid hsl(225, 85%, 55%, 0.1);
+  background: hsl(225, 85%, 55%, 0.05);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: hsl(225, 85%, 55%);
+}
+
+.cardLink {
+  position: absolute;
+  inset: 0;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

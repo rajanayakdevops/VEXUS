@@ -1,0 +1,222 @@
+.main {
+  min-height: 100vh;
+  padding-top: 6rem;
+  padding-bottom: 8rem;
+}
+
+.hero {
+  padding: 4rem 0;
+}
+
+.heroContainer {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.heroBadge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: hsl(225, 85%, 55%);
+}
+
+.heroTitle {
+  margin-top: 1rem;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: hsl(220, 25%, 10%);
+  text-wrap: balance;
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 3.75rem;
+  }
+}
+
+.heroDescription {
+  max-width: 36rem;
+  margin: 1.5rem auto 0;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: hsl(220, 15%, 55%);
+}
+
+.formSection {
+  padding: 2rem 0;
+}
+
+.formContainer {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.success {
+  border-radius: 1rem;
+  border: 1px solid hsl(220, 25%, 10%, 0.05);
+  background: white;
+  padding: 3rem;
+  text-align: center;
+}
+
+.successIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 4rem;
+  margin: 0 auto 1.5rem;
+  border-radius: 9999px;
+  background: hsl(225, 85%, 55%, 0.1);
+  color: hsl(225, 85%, 55%);
+}
+
+.successTitle {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(220, 25%, 10%);
+}
+
+.successDescription {
+  margin-top: 0.75rem;
+  line-height: 1.75;
+  color: hsl(220, 15%, 55%);
+}
+
+.form {
+  border-radius: 1rem;
+  border: 1px solid hsl(220, 25%, 10%, 0.05);
+  background: white;
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .form {
+    padding: 2.5rem;
+  }
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(220, 25%, 10%);
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid hsl(220, 25%, 10%, 0.1);
+  background: hsl(220, 20%, 98%);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: hsl(220, 25%, 10%);
+  transition: all 0.3s;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: hsl(220, 15%, 55%);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: hsl(225, 85%, 55%, 0.5);
+  box-shadow: 0 0 0 1px hsl(225, 85%, 55%, 0.5);
+}
+
+.select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.textarea {
+  resize: none;
+}
+
+.fileButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px dashed hsl(220, 25%, 10%, 0.15);
+  background: hsl(220, 20%, 98%);
+  padding: 1.5rem 1rem;
+  font-size: 0.875rem;
+  color: hsl(220, 15%, 55%);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.fileButton:hover {
+  border-color: hsl(220, 25%, 10%, 0.3);
+  color: hsl(220, 25%, 10%);
+}
+
+.fileInput {
+  display: none;
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 0.5rem;
+  border-radius: 9999px;
+  background: hsl(220, 25%, 10%);
+  padding: 0.875rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(220, 20%, 98%);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.submitBtn:hover:not(:disabled) {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.12);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

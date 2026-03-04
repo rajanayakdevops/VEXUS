@@ -1,0 +1,229 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 55vh;
+  padding-top: 6rem;
+}
+
+.heroGlow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.heroGlow::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 33.333%;
+  height: 400px;
+  width: 600px;
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
+  background: hsl(225, 85%, 55%, 0.03);
+  filter: blur(120px);
+}
+
+.heroContainer {
+  position: relative;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.heroBadge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: hsl(225, 85%, 55%);
+}
+
+.heroTitle {
+  margin-top: 1rem;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: hsl(220, 25%, 10%);
+  text-wrap: balance;
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 4.5rem;
+  }
+}
+
+.heroDescription {
+  max-width: 42rem;
+  margin: 1.5rem auto 0;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: hsl(220, 15%, 55%);
+}
+
+.filters {
+  padding: 2rem 0;
+}
+
+.filtersContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.filterButtons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.filterBtn {
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: 1px solid hsl(220, 25%, 10%, 0.1);
+  background: transparent;
+  color: hsl(220, 15%, 55%);
+}
+
+.filterBtn:hover {
+  border-color: hsl(220, 25%, 10%, 0.2);
+  color: hsl(220, 25%, 10%);
+}
+
+.filterBtnActive {
+  background: hsl(220, 25%, 10%);
+  color: hsl(220, 20%, 98%);
+  border-color: hsl(220, 25%, 10%);
+}
+
+.projects {
+  padding: 2rem 0 8rem;
+}
+
+.projectsContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  display: block;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid hsl(220, 25%, 10%, 0.05);
+  background: white;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  border-color: hsl(220, 25%, 10%, 0.1);
+}
+
+.imageWrapper {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: hsl(220, 20%, 95%);
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: all 0.5s;
+}
+
+.card:hover .image {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: hsl(220, 15%, 55%);
+}
+
+.arrowIcon {
+  color: hsl(220, 15%, 55%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover .arrowIcon {
+  opacity: 1;
+}
+
+.projectTitle {
+  margin-top: 0.5rem;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: hsl(220, 25%, 10%);
+}
+
+.summary {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: hsl(220, 15%, 55%);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  border-radius: 9999px;
+  background: hsl(220, 20%, 95%);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  color: hsl(220, 15%, 55%);
+}
