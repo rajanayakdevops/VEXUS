@@ -6,6 +6,9 @@
 # Dependencies
 node_modules
 
+# Seed folder
+seed/
+
 # Logs
 *.log
 npm-debug.log*
