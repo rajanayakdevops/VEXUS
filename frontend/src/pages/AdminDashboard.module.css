@@ -1,0 +1,232 @@
+.container {
+  min-height: 100vh;
+  padding: 6rem 2rem 4rem;
+  background: hsl(220, 20%, 98%);
+}
+
+.header {
+  max-width: 80rem;
+  margin: 0 auto 2rem;
+}
+
+.title {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(220, 25%, 10%);
+}
+
+.tabs {
+  max-width: 80rem;
+  margin: 0 auto 2rem;
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid hsl(220, 25%, 10%, 0.1);
+  overflow-x: auto;
+}
+
+.tab {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(220, 15%, 55%);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: hsl(220, 25%, 10%);
+}
+
+.tabActive {
+  color: hsl(225, 85%, 55%);
+  border-bottom-color: hsl(225, 85%, 55%);
+}
+
+.content {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  border-radius: 1rem;
+  border: 1px solid hsl(220, 25%, 10%, 0.05);
+  background: white;
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.cardTitle {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: hsl(220, 25%, 10%);
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.badgePending {
+  background: hsl(35, 92%, 50%, 0.1);
+  color: hsl(35, 92%, 40%);
+}
+
+.badgeActive {
+  background: hsl(225, 85%, 55%, 0.1);
+  color: hsl(225, 85%, 55%);
+}
+
+.badgeCompleted {
+  background: hsl(165, 70%, 42%, 0.1);
+  color: hsl(165, 70%, 35%);
+}
+
+.badgePortfolio {
+  background: hsl(280, 65%, 58%, 0.1);
+  color: hsl(280, 65%, 48%);
+}
+
+.cardDescription {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: hsl(220, 15%, 55%);
+  margin-bottom: 1rem;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background: hsl(220, 20%, 98%);
+  font-size: 0.875rem;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoLabel {
+  font-weight: 500;
+  color: hsl(220, 25%, 10%);
+}
+
+.infoValue {
+  color: hsl(220, 15%, 55%);
+  text-transform: capitalize;
+}
+
+.image {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.progressButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.progressBtn {
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid hsl(220, 25%, 10%, 0.1);
+  background: white;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: hsl(220, 15%, 55%);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.progressBtn:hover {
+  border-color: hsl(225, 85%, 55%);
+  color: hsl(225, 85%, 55%);
+  background: hsl(225, 85%, 55%, 0.05);
+}
+
+.button {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: hsl(220, 25%, 10%);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.buttonPrimary {
+  background: hsl(225, 85%, 55%);
+}
+
+.buttonPrimary:hover {
+  background: hsl(225, 85%, 50%);
+}
+
+.buttonSuccess {
+  background: hsl(165, 70%, 42%);
+}
+
+.buttonSuccess:hover {
+  background: hsl(165, 70%, 37%);
+}
+
+.empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: hsl(220, 15%, 55%);
+  font-size: 0.875rem;
+}
