@@ -1,0 +1,121 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsl(220, 20%, 98%);
+  padding: 2rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 28rem;
+  border-radius: 1rem;
+  border: 1px solid hsl(220, 25%, 10%, 0.05);
+  background: white;
+  padding: 2.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+  width: 3.5rem;
+  margin: 0 auto 1rem;
+  border-radius: 9999px;
+  background: hsl(225, 85%, 55%, 0.1);
+  color: hsl(225, 85%, 55%);
+}
+
+.title {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(220, 25%, 10%);
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: hsl(220, 15%, 55%);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(220, 25%, 10%);
+}
+
+.input {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid hsl(220, 25%, 10%, 0.1);
+  background: hsl(220, 20%, 98%);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: hsl(220, 25%, 10%);
+  transition: all 0.3s;
+}
+
+.input::placeholder {
+  color: hsl(220, 15%, 55%);
+}
+
+.input:focus {
+  outline: none;
+  border-color: hsl(225, 85%, 55%, 0.5);
+  box-shadow: 0 0 0 1px hsl(225, 85%, 55%, 0.5);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 0.5rem;
+  border-radius: 9999px;
+  background: hsl(220, 25%, 10%);
+  padding: 0.875rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(220, 20%, 98%);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.12);
+}
+
+.error {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background: hsl(350, 75%, 55%, 0.1);
+  border: 1px solid hsl(350, 75%, 55%, 0.2);
+  font-size: 0.875rem;
+  color: hsl(350, 75%, 45%);
+  text-align: center;
+}

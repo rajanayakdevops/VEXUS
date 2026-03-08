@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import styles from "./AdminDashboard.module.css";
 
 function AdminDashboard() {
   const [tab, setTab] = useState("inquiries");
@@ -102,114 +103,216 @@ function AdminDashboard() {
   };
 
   return (
-    <div style={{ padding: "40px" }}>
-      <h1>Admin Dashboard</h1>
-
-      {/* Tabs */}
-      <div style={{ marginBottom: "30px" }}>
-        <button onClick={() => setTab("inquiries")}>Inquiries</button>
-        <button onClick={() => setTab("active")}>Active</button>
-        <button onClick={() => setTab("completed")}>Completed</button>
-        <button onClick={() => setTab("portfolio")}>Portfolio</button>
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <h1 className={styles.title}>Admin Dashboard</h1>
       </div>
 
-      {/* Inquiries */}
-      {tab === "inquiries" &&
-        inquiries.map((inq) => (
-          <div key={inq._id} style={{ marginBottom: "20px" }}>
-            <h4>{inq.name}</h4>
+      <div className={styles.tabs}>
+        <button
+          onClick={() => setTab("inquiries")}
+          className={`${styles.tab} ${tab === "inquiries" ? styles.tabActive : ""}`}
+        >
+          Inquiries ({inquiries.length})
+        </button>
+        <button
+          onClick={() => setTab("active")}
+          className={`${styles.tab} ${tab === "active" ? styles.tabActive : ""}`}
+        >
+          Active Projects ({activeProjects.length})
+        </button>
+        <button
+          onClick={() => setTab("completed")}
+          className={`${styles.tab} ${tab === "completed" ? styles.tabActive : ""}`}
+        >
+          Completed ({completedProjects.length})
+        </button>
+        <button
+          onClick={() => setTab("portfolio")}
+          className={`${styles.tab} ${tab === "portfolio" ? styles.tabActive : ""}`}
+        >
+          Portfolio ({portfolioProjects.length})
+        </button>
+      </div>
 
-            <p>{inq.description}</p>
+      <div className={styles.content}>
 
-            {inq.attachment && (
-              <img src={inq.attachment} style={{ width: "200px" }} />
+        {tab === "inquiries" && (
+          <div className={styles.grid}>
+            {inquiries.length === 0 ? (
+              <div className={styles.empty}>No pending inquiries</div>
+            ) : (
+              inquiries.map((inq) => (
+                <div key={inq._id} className={styles.card}>
+                  <div className={styles.cardHeader}>
+                    <h4 className={styles.cardTitle}>{inq.name}</h4>
+                    <span className={`${styles.badge} ${styles.badgePending}`}>
+                      Pending
+                    </span>
+                  </div>
+
+                  <p className={styles.cardDescription}>{inq.description}</p>
+
+                  <div className={styles.cardInfo}>
+                    <div className={styles.infoRow}>
+                      <span className={styles.infoLabel}>Email:</span>
+                      <span className={styles.infoValue}>{inq.email}</span>
+                    </div>
+                    <div className={styles.infoRow}>
+                      <span className={styles.infoLabel}>Budget:</span>
+                      <span className={styles.infoValue}>{inq.budget}</span>
+                    </div>
+                    <div className={styles.infoRow}>
+                      <span className={styles.infoLabel}>Timeline:</span>
+                      <span className={styles.infoValue}>{inq.timeline}</span>
+                    </div>
+                  </div>
+
+                  {inq.attachment && (
+                    <img
+                      src={inq.attachment}
+                      alt="Attachment"
+                      className={styles.image}
+                    />
+                  )}
+
+                  <button
+                    onClick={() => approveInquiry(inq._id)}
+                    className={`${styles.button} ${styles.buttonSuccess}`}
+                  >
+                    Approve & Create Project
+                  </button>
+                </div>
+              ))
             )}
-
-            <br />
-
-            <button onClick={() => approveInquiry(inq._id)}>Approve</button>
           </div>
-        ))}
+        )}
 
-      {/* Active Projects */}
-      {tab === "active" &&
-        activeProjects.map((p) => (
-          <div key={p._id} style={{ marginBottom: "20px" }}>
-            <h4>
-              {p.title}
+        {tab === "active" && (
+          <div className={styles.grid}>
+            {activeProjects.length === 0 ? (
+              <div className={styles.empty}>No active projects</div>
+            ) : (
+              activeProjects.map((p) => (
+                <div key={p._id} className={styles.card}>
+                  <div className={styles.cardHeader}>
+                    <h4 className={styles.cardTitle}>{p.title}</h4>
+                    <span className={`${styles.badge} ${styles.badgeActive}`}>
+                      {p.status}
+                    </span>
+                  </div>
 
-              <span
-                style={{
-                  background: "#eee",
-                  padding: "4px 8px",
-                  borderRadius: "6px",
-                  marginLeft: "10px",
-                  fontSize: "12px",
-                }}
-              >
-                {p.status}
-              </span>
-            </h4>
+                  <p className={styles.cardDescription}>{p.description}</p>
 
-            <p>{p.description}</p>
+                  <div className={styles.cardInfo}>
+                    <div className={styles.infoRow}>
+                      <span className={styles.infoLabel}>Progress:</span>
+                      <span className={styles.infoValue}>{p.progress}</span>
+                    </div>
+                  </div>
 
-            <p>
-              <strong>Progress:</strong> {p.progress}
-            </p>
+                  <div className={styles.progressButtons}>
+                    <button
+                      onClick={() => updateProgress(p._id, "planning")}
+                      className={styles.progressBtn}
+                    >
+                      Planning
+                    </button>
+                    <button
+                      onClick={() => updateProgress(p._id, "design")}
+                      className={styles.progressBtn}
+                    >
+                      Design
+                    </button>
+                    <button
+                      onClick={() => updateProgress(p._id, "development")}
+                      className={styles.progressBtn}
+                    >
+                      Development
+                    </button>
+                    <button
+                      onClick={() => updateProgress(p._id, "testing")}
+                      className={styles.progressBtn}
+                    >
+                      Testing
+                    </button>
+                    <button
+                      onClick={() => updateProgress(p._id, "delivered")}
+                      className={styles.progressBtn}
+                    >
+                      Delivered
+                    </button>
+                  </div>
 
-            <div style={{ marginBottom: "10px" }}>
-              <button onClick={() => updateProgress(p._id, "planning")}>
-                Planning
-              </button>
-
-              <button onClick={() => updateProgress(p._id, "design")}>
-                Design
-              </button>
-
-              <button onClick={() => updateProgress(p._id, "development")}>
-                Development
-              </button>
-
-              <button onClick={() => updateProgress(p._id, "testing")}>
-                Testing
-              </button>
-
-              <button onClick={() => updateProgress(p._id, "delivered")}>
-                Delivered
-              </button>
-            </div>
-
-            <button onClick={() => completeProject(p._id)}>
-              Mark Completed
-            </button>
+                  <button
+                    onClick={() => completeProject(p._id)}
+                    className={styles.button}
+                  >
+                    Mark as Completed
+                  </button>
+                </div>
+              ))
+            )}
           </div>
-        ))}
+        )}
 
-      {/* Completed Projects */}
-      {tab === "completed" &&
-        completedProjects.map((p) => (
-          <div key={p._id} style={{ marginBottom: "20px" }}>
-            <h4>{p.title}</h4>
+        {tab === "completed" && (
+          <div className={styles.grid}>
+            {completedProjects.length === 0 ? (
+              <div className={styles.empty}>No completed projects</div>
+            ) : (
+              completedProjects.map((p) => (
+                <div key={p._id} className={styles.card}>
+                  <div className={styles.cardHeader}>
+                    <h4 className={styles.cardTitle}>{p.title}</h4>
+                    <span className={`${styles.badge} ${styles.badgeCompleted}`}>
+                      Completed
+                    </span>
+                  </div>
 
-            <p>{p.description}</p>
+                  <p className={styles.cardDescription}>{p.description}</p>
 
-            <button onClick={() => publishProject(p._id)}>
-              Publish to Portfolio
-            </button>
+                  <button
+                    onClick={() => publishProject(p._id)}
+                    className={`${styles.button} ${styles.buttonPrimary}`}
+                  >
+                    Publish to Portfolio
+                  </button>
+                </div>
+              ))
+            )}
           </div>
-        ))}
+        )}
 
-      {/* Portfolio */}
-      {tab === "portfolio" &&
-        portfolioProjects.map((p) => (
-          <div key={p._id} style={{ marginBottom: "20px" }}>
-            <h4>{p.title}</h4>
+        {tab === "portfolio" && (
+          <div className={styles.grid}>
+            {portfolioProjects.length === 0 ? (
+              <div className={styles.empty}>No portfolio projects</div>
+            ) : (
+              portfolioProjects.map((p) => (
+                <div key={p._id} className={styles.card}>
+                  <div className={styles.cardHeader}>
+                    <h4 className={styles.cardTitle}>{p.title}</h4>
+                    <span className={`${styles.badge} ${styles.badgePortfolio}`}>
+                      Portfolio
+                    </span>
+                  </div>
 
-            <p>{p.description}</p>
+                  {p.image && (
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      className={styles.image}
+                    />
+                  )}
 
-            {p.image && <img src={p.image} style={{ width: "200px" }} />}
+                  <p className={styles.cardDescription}>{p.description}</p>
+                </div>
+              ))
+            )}
           </div>
-        ))}
+        )}
+      </div>
     </div>
   );
 }
